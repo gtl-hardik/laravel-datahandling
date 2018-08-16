@@ -108,6 +108,10 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
+    'client_id' => 2,
+    'client_secret' => 'VpJYwIirciKs6a0PTxvAsfZxkdhOJijkyZ2Lk1hH',
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

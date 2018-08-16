@@ -339,6 +339,121 @@
 				"description": "http://10.0.3.150:8146/api/user/details"
 			},
 			"response": []
+		},
+		{
+			"name": "Registernew",
+			"request": {
+				"url": "http://10.0.3.150:8146/api/registernew",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "user1@test.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "confirm_password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Testuser",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Partnerlogin-1-year",
+			"request": {
+				"url": "http://10.0.3.150:8146/api/partnerlogin",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "user1@test.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "secretkey",
+							"value": "97928342",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin-30mins",
+			"request": {
+				"url": "http://10.0.3.150:8146/api/userlogin",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "user1@test.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UserDetails",
+			"request": {
+				"url": "http://10.0.3.150:8146/api/details",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImEyYWE1YWEwZGE2ZTEyZGI4ZjdlMTY4NjM4OTIxYmZiOWNjNzI3MmJiZDI1M2MyN2E5NDUyMDI0YWMxZjM3MDQ3Mjk5MDJjOGM5ODdlOWY0In0.eyJhdWQiOiIyIiwianRpIjoiYTJhYTVhYTBkYTZlMTJkYjhmN2UxNjg2Mzg5MjFiZmI5Y2M3MjcyYmJkMjUzYzI3YTk0NTIwMjRhYzFmMzcwNDcyOTkwMmM4Yzk4N2U5ZjQiLCJpYXQiOjE1MzQ0MjQyODQsIm5iZiI6MTUzNDQyNDI4NCwiZXhwIjoxNTM0NDI2MDg0LCJzdWIiOiIyNTI5MSIsInNjb3BlcyI6W119.X5BBwdMl7AdyKM8ZzPgJCaQKdsyvolO13WCZdsMYoaGK4SKhesOaxfqJJcjGYf8-PlKfTbOqAh9rKyx4uR2bdFgbcNbyVdMuC1wZR4rrXNBawkbNHwPLv5-VGyUw5eHaUPxL2aOBw9ByYgbwLCDnuFQ6000nHdNGfu0S9RhDaO4Sn-DrvRXCAGtfAqnJiNFBu2tdLn2ASeKxzYkunkJtGHiGLuVKi-EMD4HqDizSmfQmzB100jdUJ2Ksf3iMyBJl5yo952c2uRM_Yawdzc9oQa-Eg3VJe2I0KYOXgNRPd3AUaMhridAC-NWOGYYSpGUIT0uY9LhEwgyTaW2WcweHseqPH3pIbbq-0BGgpbR0OCei4ckJ6KA4S5qnY30i9BC2KAF-u6RNZNGsSMP8PcIhXuM2Kn5-2U9mfk5KuJqzCC4Seik3iAchbpI-nl4tGIPaGBi_Hjr-5am0Y2D76iomYy8XbFOFNuvD0aQ8IEF5_1iLC5Ybds4RGZ2wgokvTf9T0g1GNQlGR9kr0ase2xQEB7OSgh6qaLhNuwWKjw_I8_upxBrgPJYOdCdp-ugnermpdbm6hSd3C4Q9YoMXA0b6_ieTC1L6exyUEnjZAx7ockabE1xYcF3h1u8n2AwIdZz8rE3RZUqZNQXCJ7Uq7WPs7ghG9AXMwkO01KOE5QuHgdU11",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

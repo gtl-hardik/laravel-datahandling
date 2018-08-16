@@ -81,27 +81,89 @@ last_name
 key_name
 key_value
 
-A method to demostrate how a parent and child table updates can be done.
+A method to demonstrate how a parent and child table updates can be done.
 
 
 7. Get user
 GET http://10.0.3.150:8146/api/user/details
 
-A method to demostrate how eloquent is working with relational data and getting child entity data along with the single object.
+A method to demonstrate how eloquent is working with relational data and getting child entity data along with the single object.
 
 8. User invoice
 GET http://10.0.3.150:8146/api/user/invoice
 
-A method to demostrate how eloquent is working with relational data and getting child entity data along with the single object.
+A method to demonstrate how eloquent is working with relational data and getting child entity data along with the single object.
 
 9. Delete user
 GET http://10.0.3.150:8146/api/users/25080/destroy
 
-A method to demostrate how eloquent is removing child object on deletion of parent entity how children entities are removed.
+A method to demonstrate how eloquent is removing child object on deletion of parent entity how children entities are removed.
 Here we just had a look on your existing data structure and found that it is having foreignkey relationship but did not have on delete cascade method.
 Hence we have use observers on deleting method to remove child entities as well. In case if table designs are made strictly using deleting cascade, it will be managed within database itself.
 
 
+10. Queue management
+
+Queue in laravel can be managed via, several available drivers in laravel.
+This example demonstrate for database driver so queue will be managed from database only.
+We have created a job using command 'php artisan queue:table'  and then 'php artisan migrate' which will create a table 'jobs' in the database.
+We need to update .env file as well for mentioning queue driver database.
+Along with table in database, artisan command has created one job class in app\jobs folder, which is having handle method, we need to put core logic over there.
+
+Created a method 'send' in home controller which will send a job in database to run. with some specific time.
+
+We need to keep a process running on the server which will take a raw of job and process it on desired time.
+php artisan queue:listen database
+
+11. Token mechanism
+As per discussion and updates with Pekko, we have created two separate types of token in the system.
+    a. A personal token, should leave long a year.
+        We have created a method for getting a personal token based on username and secretId from database.
+        This token can be shared by user to his office/someone who can generate invoice and other things on behalf of him.
+        The age of this token can be a year.
+
+    b. Normal token, should leave for 30 mins only.
+        We have created a method for authenticate user based on username and password from our existing users table.
+        This token will leave long for 30 mins only.
+
+User Login for getting token
+POST http://10.0.3.150:8146/api/userlogin
+
+A method to authenticate user and get access token.
+Params:
+email
+password
+
+
+Login for personal token
+POST http://10.0.3.150:8146/api/partnerlogin
+
+A method to authenticate user and get access token.
+Params:
+email
+secretId
+
+Along with login methods, we have created registration and refresh token methods as well.
+
+Register a user
+http://10.0.3.150:8146/api/registernew
+
+A method to register a user in the system
+
+Params
+email
+password
+confirm_password
+isPartner
+
+if isPartner is passed with value 1 then, user will be treated as partner and secret key will saved in database.
+In case without that param, no secretId will be saved.
+
+
+Getting user details
+http://10.0.3.150:8146/api/details
+
+A method to check access token is working fine. It will return current user's detail after once verified.
 
 
 
@@ -119,4 +181,6 @@ For general purpose we have used client_id and client_secret for id 2 statically
 As we have tried to use your existing sample data, we have not created seeds for this. You need to import sql just to have a look on this projet.
 
 We have also put postman exported json here for your convenience. You can directly import it and use it.
+
+
 
